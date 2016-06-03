@@ -1,0 +1,30 @@
+
+<select  name="superPowerSelector" ng-model="powerSelector" ng-options="power.power_name for power in superPowers">
+  </select>
+<button ng-click="findHeroesWithPower()">find heroes with the selected power</button>
+<button ng-click="findAllHeroes()">observe all heroes</button>
+
+
+<section>
+    <table>
+      <thead>
+        <tr>
+          <th>Alias</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>City</th>
+          <th>Power name</th>
+          <th>Delete Hero</th>
+        </tr>
+      </thead>
+      <tr ng-repeat="hero in displayedHeroes">
+        <td>{{hero.alias}}</td>
+        <td>{{hero.first_name}}</td>
+        <td>{{hero.last_name}}</td>
+        <td>{{hero.city}}</td>
+        <td>{{hero.power_name}}</td>
+        <td><button ng-click="deleteHero(hero._id)">Delete Hero</button></td>
+
+      </tr>
+    </table>
+</section>
